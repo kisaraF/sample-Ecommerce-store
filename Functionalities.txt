@@ -1,0 +1,6 @@
+Review window
+Scroll behavior
+Button Animations
+Product Filtering
+Add to cart option
+Responsiveness
