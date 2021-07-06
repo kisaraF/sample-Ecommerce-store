@@ -4,6 +4,24 @@ html,body{
 	scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #78866b; 
+}
+
 *{
 	padding: 0;
 	margin: 0;
@@ -30,6 +48,10 @@ nav{
 	font-family: 'Audiowide', cursive;
 }
 
+#ham{
+	display: none;
+}
+
 .menu{
 	margin-left:  auto;
 }
@@ -38,6 +60,13 @@ nav{
 	color: #78866b;
 	transition: all 0.3s;
 }
+
+/*Wallpaper Section*/
+.wallpaper{
+	width: 100%;
+}
+
+/*Home Grid Search*/
 
 .search{
 	margin-left: auto;
@@ -112,6 +141,11 @@ blockquote{
 	padding: 10px;
 }
 
+.grid-card-text{
+	overflow: scroll;
+	height: 100px;
+}
+
 #grid-img{
 	width: 100%;
 }
@@ -123,33 +157,16 @@ blockquote{
 	margin-bottom: 100px;
 }
 
-/*Affliiate Section*/
-.affiliate{
-	background-color: #fff;
-}
-
-.affiliate-heading{
-	color: #000;
-	font-size: 1.65vw;
-	padding: 20px 75px;
-}
-
-.logos{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap:100px;
-	padding: 50px;
-}
 
 /*Review Section*/
 .review{
 	margin: 1.5em auto 1.5em;
+	background-color: #c4c4c4;
 }
 
 .sliderBox{
 	text-align: center;
-	width: 75%;
+	width: 70%;
 	margin: auto;
 	padding: 3em;
 	display: none;
@@ -166,9 +183,13 @@ mark{
 	color: #f4f4f4;	
 }
 
+.para{
+	color: black;
+}
+
 .rating{
 	margin: 2em auto;
-	border:2px solid yellow;
+	background-color: #78866b;
 	border-radius: 5%;
 	width: 10%;
 	padding: 0.3em;
@@ -187,7 +208,7 @@ p{
 
 .product-title{
 	font-size: 1.65vw;
-	padding: 20px 75px;
+	padding: 2em 1.5em;
 	display: flex;
 }
 
@@ -244,3 +265,75 @@ p{
 }
 
 /*Responsive Design*/
+@media(max-width: 768px){
+	.logo, #menu-link, .grid-heading{
+		font-size: 1.2rem;
+	}
+
+	.sub-grid, .product-subGrid{
+		grid-template-columns: repeat(3,1fr);
+	}
+
+	.rating{
+		width: 15%;
+	}
+}
+
+@media(max-width: 540px){
+	.logo, #menu-link, .grid-heading{
+		font-size: 1.1rem;
+	}
+
+	.menu{
+		display: none;
+	}
+
+	#ham{
+		display: block;
+		margin-left: auto;
+	}
+
+	.sub-grid, .product-subGrid{
+		grid-template-columns: repeat(2,1fr);
+	}
+
+	.rating{
+		width: 20%;
+	}
+}
+
+@media(max-width: 425px){
+	.logo, #menu-link, .grid-heading{
+		font-size: 1.5rem;
+	}
+
+	.grid-heading{
+		margin-bottom: 1.5em;
+	}
+
+	.search{
+		margin-bottom: 2em;
+	}
+
+	.home-nav, .product-title{
+		display: block;
+	}
+
+	.sub-grid, .product-subGrid{
+		grid-template-columns: repeat(1,1fr);
+	}
+
+	.rating{
+		width: 30%;
+	}
+
+	#avatar{
+		width: 20%;
+	}
+}
+
+@media(max-width: 320px){
+	.rating{
+		width: 36%;
+	}
+}
